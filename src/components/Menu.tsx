@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Logout from "./logut/logout";
+import AuthMenu from "./logut/login";
 
 const Menu = () => {
   const item = [
@@ -20,14 +20,6 @@ const Menu = () => {
       name: "Add Product",
       link: "/admin/add-product",
     },
-    {
-      name: "Login",
-      link: "/admin/login",
-    },
-    {
-      name: "Register",
-      link: "/admin/register",
-    },
   ];
   return (
     <ul className="text-center py-20">
@@ -41,7 +33,7 @@ const Menu = () => {
           </li>
         );
       })}
-      <Logout />
+      <AuthMenu />
     </ul>
   );
 };

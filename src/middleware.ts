@@ -9,14 +9,16 @@ export function middleware(request: NextRequest) {
 
   const accessAble =
     pathname === "/admin/login" || pathname === "/admin/register";
+
   if (accessAble) {
-    console.log("Access admin login, registered");
+    if (authValues) {
+      return NextResponse.redirect(new URL("/", request.url));
+    }
   } else {
-    console.log("Access other routues");
+    if (!authValues) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
   }
-  // if (authValues === "" || authValues === undefined) {
-  //   return NextResponse.rewrite(new URL("/admin/login", request.url));
-  // }
 }
 
 export const config = {
