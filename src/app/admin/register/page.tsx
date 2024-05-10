@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Register page",
+  description: "Register Page discription",
+  keywords: ["Next.js", "React", "JavaScript", "resgitser page"],
+};
 export default function Register() {
   return (
     <main>
